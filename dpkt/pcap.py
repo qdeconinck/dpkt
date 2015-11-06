@@ -182,7 +182,7 @@ class Reader(object):
                 break
             hdr = self.__ph(buf)
             buf = self.__f.read(hdr.caplen)
-            yield (hdr.tv_sec + (hdr.tv_usec / 1000000.0), buf)
+            yield ((hdr.tv_sec, hdr.tv_usec), buf)
 
 
 def test_pcap_endian():
